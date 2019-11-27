@@ -47,7 +47,7 @@ namespace crow
             static std::string timestamp()
             {
                 char date[32];
-                time_t t = time(0);
+                time_t t = std::time(0);
 
                 tm my_tm;
 

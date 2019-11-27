@@ -79,7 +79,7 @@ namespace crow
                             std::string date_str;
                             auto update_date_str = [&]
                             {
-                                auto last_time_t = time(0);
+                                auto last_time_t = std::time(0);
                                 tm my_tm;
 
 #if defined(_MSC_VER) or defined(__MINGW32__)
