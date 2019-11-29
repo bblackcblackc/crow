@@ -19,7 +19,8 @@ namespace crow
 
         boost::asio::io_service& get_io_service()
         {
-            return socket_.get_io_service();
+            //return socket_.get_io_service();
+            return (boost::asio::io_context&)socket_.get_executor().context();
         }
 
         tcp::socket& raw_socket()
@@ -96,7 +97,8 @@ namespace crow
 
         boost::asio::io_service& get_io_service()
         {
-            return raw_socket().get_io_service();
+            //return raw_socket().get_io_service();
+            return (boost::asio::io_context&)raw_socket().get_executor().context();
         }
 
         template <typename F> 
